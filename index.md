@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# Linux Einführung
 
-You can use the [editor on GitHub](https://github.com/FabianTe/unix-zusammenfassung/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Arbeiten im Dateisystem
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+```sh
+# Verzeichnis wechseln
+cd /
+cd /home
+# Zum Home-Verzeichnis wechseln
+cd
+cd $HOME
 
-### Markdown
+# Absoluter Pfad
+pwd
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Verzeichnis listen
+ls
+# Verzeichnis als Liste listen
+ls -l
 
-```markdown
-Syntax highlighted code block
+# Setzen des Änderungsdatums einer Datei auf den aktuellen Zeitpunkt
+touch text.txt # Das Änderungsdatum der Datei text.txt ist jetzt gesetzt
+# Besonderer Fall: Wenn text.txt nicht existiert, wird sie als neue, leere Datei angelegt!
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# Neue Datei anlegen
+>leereDatei
+# Sonderzeichen beachten!
+>leere\ Neue Datei
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Eingaben / Ausgaben
+```sh
+# Etwas ausgeben
+echo
+# Umgebungsvariablen ausgeben
+echo $HOME
+```
 
-### Jekyll Themes
+## Hilfen / Sonstiges
+```sh
+# Hilfe zum Befehl ... ausgeben
+man ...
+man echo # Hilfe für echo ausgeben
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/FabianTe/unix-zusammenfassung/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Tipps / Tricks
 
-### Support or Contact
+**ACHTUNG: Diese Befehle sind nicht Teil der Vorlesung, sondern persönliche Ergänzungen, die die Geeks unter uns interessant finden können.**
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Alias für Befehl erstellen
+
+Den Befehl ```cls```gibt es in Linux standardmäßig nicht. Bei Windows würde ```cls``` das Terminal leeren. Mittels ```alias``` kann man bspw. den Befehl ```cls``` selbst festlegen.
+
+```sh
+alias cls=clear
+```
+
+Eine Ausführung von ```cls``` führt nun den Befehl ```clear``` aus!
