@@ -45,7 +45,7 @@ man echo # Hilfe für echo ausgeben
 
 ## Tipps / Tricks
 
-**ACHTUNG: Diese Befehle sind nicht Teil der Vorlesung, sondern persönliche Ergänzungen, die die Geeks unter uns interessant finden können.**
+**ACHTUNG: Diese Befehle sind nicht Teil der Vorlesung, für einige könnten sie allerdings ganz interessant sein.**
 
 ### Alias für Befehl erstellen
 
