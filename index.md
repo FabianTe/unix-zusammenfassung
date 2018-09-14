@@ -28,19 +28,62 @@ touch text.txt # Das Änderungsdatum der Datei text.txt ist jetzt gesetzt
 >leere\ Neue Datei
 ```
 
-## Eingaben / Ausgaben
+## Eingaben / Ausgaben (```echo``` und ```cat```)
 ```sh
 # Etwas ausgeben
 echo
 # Umgebungsvariablen ausgeben
 echo $HOME
+
+# Setzte den Inahlt der Datei test.txt zu "Hallo Welt!" Ersetzt bestehenden Inahlt!
+echo Hallo Welt! >test.txt
+
+# Gibt den Inhalt einer Datei im Terminal aus
+cat test.txt 
+
+# Leitet die folgenden Terminaleingaben in die Datei test.txt um.
+cat >test.txt
+
+# Leitet den Inhalt der Datei A in die Datei B um
+cat <A >B
 ```
 
-## Hilfen / Sonstiges
+**Achtung:** Das Umleiten der Eingaben / Ausgaben übernimmt die Shell! Der eigentliche Prozess (```cat``` in den obrigen Beispielen) bekommt davon gar nichts mit, da dieser auf die Dateien im Ordner ```/proc/.../fd``` zugreift (```...``` ist die PID des Prozesses).
+
+Außerdem übernimmt die Shell außerdem das ersetzen von bspw. Umgebungsvariablen wie ```$HOME```. Davon bekommen die eigentlichen Prozesse ebenfalls nichts mit!
+
+## Prozesse
+```sh
+# Zeigt die aktiven Prozesse der aktiven Session inkl. Details aus.
+ps
+
+# ps erweitert um Informationen zu TTY (mit welchem Terminal ist der Prozess verbunden) und STAT (Status des Prozesses)
+ps -x
+```
+
+### ```stdin, stdout, sterr``` eines Prozesses anzeigen
+
+Jeder Prozess verfügt über 3 geöffnete Dateien, in die Standardausgaben, Fehler geschrieben und Eingaben gelesen werden. Diese können, wenn die PID eines Prozesses bekannt ist (siehe ```ps```), angezeigt werden:
+
+```sh
+# Angenommen die PID ist 8473
+ls -l /proc/8473/fd
+```
+
+Werden beispielsweise via ```cat > Ausgabe.txt``` die Terminal-Eingaben in eine Datei umgeleitet, dann wird auffallen, dass eine der 3 Dateien umgeleitet ist auf ```Ausgabe.txt```.
+
+## Hilfen
 ```sh
 # Hilfe zum Befehl ... ausgeben
 man ...
 man echo # Hilfe für echo ausgeben
+```
+
+Ansonsten hat fast jeder Befehl die Option ```-h```:
+
+```sh
+# Zeigt die Hilfe für den Befehl mkdir an.
+mkdir -h
 ```
 
 ## Tipps / Tricks
