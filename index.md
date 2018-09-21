@@ -26,14 +26,35 @@ touch text.txt # Das Änderungsdatum der Datei text.txt ist jetzt gesetzt
 >leereDatei
 # Sonderzeichen beachten!
 >leere\ Neue Datei
+
+# Erstelle einen neuen Ordner im aktuellen Verzeichnis
+mkdir neuerOrdner
 ```
 
 ## Eingaben / Ausgaben (```echo``` und ```cat```)
+
+**Hinweis**: Wenn von Dateien gesprochen wird, dann können auch Verzeichnisse betroffen sein, da diese bei Linux ebenfalls Dateien sind.
+
 ```sh
 # Etwas ausgeben
 echo
 # Umgebungsvariablen ausgeben
 echo $HOME
+
+# Gibt alle Dateien im aktuellen Verzeichnis aus.
+# Die Shell ersetzt * durch alle Namen der Dateien im Verzeichnis.
+# Versteckte Dateien werden nicht beachtet.
+# Wenn im Verzeichnis KEINE Dateien sind, dann wird * gar nicht ersetzt.
+echo *
+
+# Zeige alle versteckte Dateien
+echo .*
+
+# Zeige alle Dateien, die einen Punkt im Namen enthalten. Das beinhaltet NICHT versteckte Dateien
+echo *.*
+
+# Gibt alle Dateien aus, die 3 Zeichen lang sind
+echo ???
 
 # Setzte den Inahlt der Datei test.txt zu "Hallo Welt!" Ersetzt bestehenden Inahlt!
 echo Hallo Welt! >test.txt
