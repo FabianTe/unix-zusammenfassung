@@ -93,6 +93,24 @@ ls -l /proc/8473/fd
 
 Werden beispielsweise via ```cat > Ausgabe.txt``` die Terminal-Eingaben in eine Datei umgeleitet, dann wird auffallen, dass eine der 3 Dateien umgeleitet ist auf ```Ausgabe.txt```.
 
+## Inter-Prozess-Kommunikation mittels `grep`
+
+Unter Linux wird das Piping verwendet, um Kommunikation zwischen Prozessen herzustellen.
+
+Mittels des Befehls `grep` können Ausgaben eines Programmes durch Regex-Anweisungen extrahiert werden.
+
+```sh
+# Gibt alle Zeilen der Datei /etc/passwd aus, die den Term "root" beinhalten.
+cat /etc/passwd | grep root
+```
+
+## System
+
+```sh
+# Beinhaltet alle Benutzer des Systems
+cat /etc/passwd
+```
+
 ## Hilfen
 ```sh
 # Hilfe zum Befehl ... ausgeben
