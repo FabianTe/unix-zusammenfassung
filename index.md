@@ -29,6 +29,15 @@ touch text.txt # Das Änderungsdatum der Datei text.txt ist jetzt gesetzt
 
 # Erstelle einen neuen Ordner im aktuellen Verzeichnis
 mkdir neuerOrdner
+
+# Benenne eine Datei um. A wird umbenannt in B
+mv A B
+
+# Erstelle einen Symlink (Soft-Link)
+ln -s original linked
+
+# Entferne den Symlink. Dies entfernt nicht das "Original"
+rm linked
 ```
 
 ## Eingaben / Ausgaben (```echo``` und ```cat```)
